@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoom In / Out</title>
     <link rel="stylesheet" href="scss/style.css">
-    
+
 </head>
+
 <body>
     <header class="site-header">
         <div class="logo">
@@ -31,12 +33,64 @@
                 <li>
                     <a href="">Publicaciones</a>
                 </li>
-                
+
             </ul>
         </nav>
-        
     </header>
-    <h1>hola</h1>
+    <div class="container">
+        <div id="canvas-container">
+            <!-- Modal 1 -->
+            <div id="modal-1" class="modal">
+                <button class="close-button" onclick="closeModal('modal-1')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-content">
+                    <div class="media-content">
+                        <img src="ejemplo.jpg" alt="Foto 1">
+                    </div>
+                    <div class="text-content">
+                        <h2>Título del modal</h2>
+                        <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
+                            su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
+                            trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2 -->
+            <div id="modal-2" class="modal">
+                <button class="close-button" onclick="closeModal('modal-2')">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-content">
+                    <div class="media-content">
+                        <video controls>
+                            <source src="video.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                    </div>
+                    <div class="text-content">
+                        <h2>Título modal 2</h2>
+                        <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
+                            su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
+                            trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
     <script src="js/nav.js"></script>
+
+    <footer class="site-footer">
+        <div class="logo-pucv">
+
+        </div>
+    </footer>
+
 </body>
+
 </html>
