@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+
 </head>
 
 <body>
@@ -38,52 +39,53 @@
             </ul>
         </nav>
     </header>
+    
     <div class="container">
-        <div id="canvas-container">
-            <!-- Modal 1 -->
-            <div id="modal-1" class="modal">
-                <button class="close-button" onclick="closeModal('modal-1')">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="modal-content">
-                    <div class="media-content">
-                        <img src="ejemplo.jpg" alt="Foto 1">
-                    </div>
-                    <div class="text-content">
-                        <h2>Título del modal</h2>
-                        <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
-                            su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
-                            trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
-                        </p>
-                    </div>
+        <div id="canvas-container"></div>
+        <!-- Modal 1 -->
+        <div id="modal-1" class="modal">
+            <button class="close-button" onclick="closeModal('modal-1')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="media-content">
+                    <img src="ejemplo.jpg" alt="Foto 1">
                 </div>
-            </div>
-
-            <!-- Modal 2 -->
-            <div id="modal-2" class="modal">
-                <button class="close-button" onclick="closeModal('modal-2')">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="modal-content">
-                    <div class="media-content">
-                        <video controls>
-                            <source src="video.mp4" type="video/mp4">
-                            Tu navegador no soporta la etiqueta de video.
-                        </video>
-                    </div>
-                    <div class="text-content">
-                        <h2>Título modal 2</h2>
-                        <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
-                            su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
-                            trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
-                        </p>
-                    </div>
+                <div class="text-content">
+                    <h2>Título del modal</h2>
+                    <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
+                        su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
+                        trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
+                    </p>
                 </div>
-
             </div>
         </div>
+
+        <!-- Modal 2 -->
+        <div id="modal-2" class="modal">
+            <button class="close-button" onclick="closeModal('modal-2')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="media-content">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <div class="text-content">
+                    <h2>Título modal 2</h2>
+                    <p>En la historia de Chile, la extracción de materias primas ha desempeñado un papel crucial en
+                        su economía, impactando tanto en el bienestar social como en la ecología. Actualmente, esta
+                        trayectoria experimenta un nuevo boom a través del extractivismo minero y la desalinización.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-  
+
 
     <footer class="site-footer">
         <div class="logo-pucv">
@@ -91,10 +93,10 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
     <script src="js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="sketch.js"></script>
+    <script src="js/sketch.js"></script>
+    <script src="js/p5.js"></script>
 
 </body>
 

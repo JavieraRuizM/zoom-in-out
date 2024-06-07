@@ -13,13 +13,14 @@ let iconImage1, iconImage2;
 
 function preload() {
     img = loadImage('base1.png'); // Cargar la imagen 'base1.png' y almacenarla en la variable 'img'
-    iconImage1 = loadImage('../assets/icon1.svg'); // Cargar el primer ícono
+    iconImage1 = loadImage('icon1.svg'); // Cargar el primer ícono
     iconImage2 = loadImage('icon2.svg'); // Cargar el segundo ícono
     
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight); // Crear un canvas del tamaño de la ventana del navegador
+    canvas = createCanvas(windowWidth, windowHeight); 
+    canvas.parent('canvas-container'); 
     if (img.width > windowWidth) { 
         resizeCanvas(img.width, windowHeight); // Si la imagen es más ancha que la ventana, cambiar el tamaño del canvas para que coincida con el ancho de la imagen
     }

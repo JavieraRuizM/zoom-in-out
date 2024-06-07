@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 * {
   list-style: none;
   text-decoration: none;
@@ -117,5 +118,93 @@ header {
   }
   .nav-bar.active ul {
     display: block; /* Muestra la lista cuando está activo */
+  }
+}
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px); /* Aplica el efecto de desenfoque al fondo */
+  /* Media Query para pantallas de ancho máximo 900px */
+}
+.modal .modal-content {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  margin-top: 40px;
+  gap: 4rem;
+  height: 100%;
+  overflow: auto;
+  padding: 6rem;
+}
+.modal .modal-content img,
+.modal .modal-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out; /* Añade una transición suave */
+}
+.modal .close-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 50px;
+  color: #D4D4D4;
+  padding: 10px;
+}
+.modal .close-button:hover {
+  color: #F1F0F0;
+}
+.modal .text-content {
+  color: whitesmoke;
+  overflow: auto;
+}
+.modal .text-content h2 {
+  color: #ADF1FA; /* Cambia el color del texto */
+  margin-top: 0;
+  font-size: 40px; /* Cambia el tamaño del texto */
+  font-weight: bold; /* Cambia el peso de la fuente */
+  margin-bottom: 10px; /* Agrega un margen inferior */
+  padding: 0;
+  line-height: 1.2; /* Ajusta la altura de línea para que sea más compacta */
+  vertical-align: top;
+}
+.modal .text-content p {
+  font-weight: 400;
+  color: #FCFCF6;
+  font-size: 1.1em;
+  line-height: 1.58;
+}
+@media (max-width: 900px) {
+  .modal .modal-content {
+    margin-top: 70px;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem; /* Ajusta el gap si es necesario */
+  }
+  .modal .modal-content img,
+  .modal .modal-content video {
+    width: 100%;
+    height: auto;
+  }
+  .modal .text-content h2 {
+    font-size: 1.5em; /* Ajusta el tamaño del texto si es necesario */
+  }
+  .modal .text-content p {
+    font-size: 1em; /* Ajusta el tamaño del texto si es necesario */
   }
 }/*# sourceMappingURL=style.css.map */
