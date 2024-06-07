@@ -7,20 +7,20 @@ body {
 }
 
 .container{
-    position:absolute;
-    top: 5rem;
-    bottom: 3rem;
-    width: 100%;
+padding-top: 5rem; /* Altura del encabezado */
+  max-width: 100vw; /* Ancho máximo igual al viewport */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
     
   }
   
   #canvas-container {
-    
-    width: 100%;
-    height: 100%;
+
     margin: 0 auto; /* Centra horizontalmente */
-    border: 2px solid black; /* Borde para visualización */
+    max-height: calc(100vh - 80px - 80px);
+    
   }
+
+
 
 .modal {
     display: none;
@@ -118,3 +118,14 @@ body {
         }
     }
 }
+
+.site-footer {
+    
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 30 0;
+      height: 3rem;
+      background-color: #333;
+      
+  }
