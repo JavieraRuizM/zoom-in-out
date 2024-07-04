@@ -28,6 +28,10 @@ function setup() {
     window.addEventListener('wheel', handleWheel, { passive: false }); // Manejar scroll
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+ }
+ 
 function draw() {
     background(255); // Fondo blanco
     translate(offsetX, 0); // Desplazamiento horizontal
