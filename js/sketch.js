@@ -12,7 +12,7 @@ let modalOpen = false; // Indicador estado del modal
 let iconImage1, iconImage2;
 
 function preload() {
-    img = loadImage('base1.png'); // Cargar la imagen 'base1.png' y almacenarla en la variable 'img'
+    img = loadImage('bass.png'); // Cargar la imagen 'base1.png' y almacenarla en la variable 'img'
     iconImage1 = loadImage('icon1.svg'); // Cargar el primer ícono
     iconImage2 = loadImage('icon2.svg'); // Cargar el segundo ícono
     
@@ -29,6 +29,10 @@ function setup() {
     noStroke(); // Deshabilitar los contornos para los círculos
 }
 
+function windowResized() {
+   resizeCanvas(windowWidth, windowHeight);
+}
+
 // Constructor de objetos Circle
 function Circle(x, y, modalId, iconImage) {
     this.x = x; // Coordenada x del círculo
@@ -38,17 +42,36 @@ function Circle(x, y, modalId, iconImage) {
     this.diametroActual = diametro; // Diámetro actual del círculo
 }
 
+
 // Función para generar y agregar círculos al array
 function generateCircles() {
-    circles.push(new Circle(140, 280, 'modal-1', iconImage1)); // Agregar un círculo con posición, ID del modal e ícono específicos
-    circles.push(new Circle(1625, 160, 'modal-2', iconImage2)); // Agregar otro círculo
+    circles.push(new Circle(120, 430, 'modal-1', iconImage1)); // Agregar un círculo con posición, ID del modal e ícono específicos
+    circles.push(new Circle(525, 300, 'modal-2', iconImage2)); 
+    circles.push(new Circle(250, 570, 'modal-3', iconImage1));
+    circles.push(new Circle(850, 430, 'modal-2', iconImage2));
+    circles.push(new Circle(1470, 330, 'modal-1', iconImage1)); 
+    circles.push(new Circle(1980, 450,'modal-3', iconImage2));
+    circles.push(new Circle(2260, 550,'modal-2', iconImage1));
+    circles.push(new Circle(3440, 450,'modal-3', iconImage2));
+    circles.push(new Circle(3700, 500,'modal-2', iconImage1));
+    circles.push(new Circle(4650, 500,'modal-3', iconImage2));
+    circles.push(new Circle(6550, 500,'modal-2', iconImage1));
     // Puedes agregar más círculos si es necesario
+}
+
+// Función para manejar la imagen en el canvas
+function drawImage() {
+    let scaleFactor = windowHeight / img.height;
+    let scaledWidth = img.width * scaleFactor;
+    image(img, 0, 0, scaledWidth, windowHeight);
 }
 
 function draw() {
     background(255); // Establecer el fondo blanco
     translate(offsetX, 0); // Aplicar un desplazamiento horizontal al canvas
-    image(img, 0, 0); // Dibujar la imagen en el canvas
+
+    //image(img, 0, 0);
+    drawImage();
 
     // Iterar sobre cada círculo
     circles.forEach(circle => {
@@ -66,18 +89,18 @@ function draw() {
             ellipse(circle.x, circle.y, diametroExpandido, diametroExpandido);
 
             // Dibujar el círculo principal con el efecto de interpolación
-            fill(191, 191, 186);
+            fill(250, 241, 231);
             ellipse(circle.x, circle.y, circle.diametroActual, circle.diametroActual);
         }
 
         // Dibujar el círculo principal con el efecto de oscilación de la opacidad
-        fill(191, 191, 186/*, opacidad*/);
+        fill(250, 241, 231/*, opacidad*/);
         ellipse(circle.x, circle.y, circle.diametroActual, circle.diametroActual);
 
       
         // Dibujar la imagen del ícono centrada en el círculo y escalada proporcionalmente
         if (circle.iconImage) {
-            let iconSize = map(circle.diametroActual, diametro, diametroExpandido, 18, 35); // Escalar el tamaño del ícono proporcionalmente
+            let iconSize = map(circle.diametroActual, diametro, diametroExpandido, 18, 30); // Escalar el tamaño del ícono proporcionalmente
             let iconX = circle.x - iconSize / 2; // Coordenada x del ícono
             let iconY = circle.y - iconSize / 2; // Coordenada y del ícono
             image(circle.iconImage, iconX, iconY, iconSize, iconSize); // Dibujar la imagen
