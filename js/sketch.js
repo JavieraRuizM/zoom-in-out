@@ -11,7 +11,7 @@ let modalOpen = false;
 let iconImage1, iconImage2;
 
 function preload() {
-    img = loadImage('popopo.png'); // Cargar la imagen
+    img = loadImage('wep.webp'); // Cargar la imagen
     iconImage1 = loadImage('icon1.svg'); // Cargar íconos
     iconImage2 = loadImage('icon2.svg');
 }
