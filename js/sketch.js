@@ -49,7 +49,7 @@ function draw() {
 
         // Dibujar círculos
         if (d < diametro / 2) {
-            fill(201, 245, 250, transparencia); // Color y transparencia
+            fill(106, 186, 181, transparencia); // Color y transparencia
             ellipse(circle.x, circle.y, diametroExpandido, diametroExpandido); // Dibujar círculo expandido
 
             fill(250, 241, 231); // Color del círculo principal
@@ -74,7 +74,7 @@ function draw() {
 
 function generateCircles() {
     circles.push(new Circle(180, 340, 'modal-1', iconImage1)); 
-    circles.push(new Circle(525, 300, 'modal-2', iconImage2)); 
+    circles.push(new Circle(605, 340, 'modal-2', iconImage2)); 
     circles.push(new Circle(380, 570, 'modal-3', iconImage1));
     circles.push(new Circle(980, 330, 'modal-2', iconImage2));
     circles.push(new Circle(1470, 330, 'modal-1', iconImage1)); 
@@ -131,6 +131,27 @@ function closeModal(modalId) {
         console.error(`Modal with ID ${modalId} not found.`);
     }
 }
+
+function touchStarted() {
+    handleTouch(touches[0].x, touches[0].y);
+    return false; // Prevent default behavior
+}
+
+function handleTouch(x, y) {
+    let foundCircle = false;
+    circles.forEach(circle => {
+        let d = dist(x - offsetX, y, circle.x, circle.y);
+        if (d < diametro / 2) {
+            showModal(circle.modalId);
+            foundCircle = true;
+        }
+    });
+
+    if (!foundCircle) {
+        // Realizar otras operaciones si no se hizo clic en ningún círculo
+    }
+}
+
 
 // Constructor de objetos Circle
 function Circle(x, y, modalId, iconImage) {
