@@ -73,10 +73,10 @@ function draw() {
 }
 
 function generateCircles() {
-    circles.push(new Circle(120, 430, 'modal-1', iconImage1)); 
+    circles.push(new Circle(180, 340, 'modal-1', iconImage1)); 
     circles.push(new Circle(525, 300, 'modal-2', iconImage2)); 
-    circles.push(new Circle(250, 570, 'modal-3', iconImage1));
-    circles.push(new Circle(850, 430, 'modal-2', iconImage2));
+    circles.push(new Circle(380, 570, 'modal-3', iconImage1));
+    circles.push(new Circle(980, 330, 'modal-2', iconImage2));
     circles.push(new Circle(1470, 330, 'modal-1', iconImage1)); 
     circles.push(new Circle(1980, 450,'modal-3', iconImage2));
     circles.push(new Circle(2260, 550,'modal-2', iconImage1));
