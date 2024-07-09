@@ -200,7 +200,7 @@ body.modal-open {
   font-weight: bold; /* Cambia el peso de la fuente */
   margin-bottom: 5px; /* Agrega un margen inferior */
   padding: 0;
-  line-height: 1.1; /* Ajusta la altura de línea para que sea más compacta */
+  line-height: 1.3; /* Ajusta la altura de línea para que sea más compacta */
   vertical-align: top;
 }
 .modal .text-content h3 {
