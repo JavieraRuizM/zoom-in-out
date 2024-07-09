@@ -1,0 +1,42 @@
+.creditos {
+  padding: 10rem;
+  padding-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  row-gap: 4rem;
+  justify-content: center;
+}
+
+.persona {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+
+.cargo h4 {
+  margin: 0;
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+.info-persona {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.info-persona h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+.info-persona ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.info-persona ul li {
+  margin: 5px 0;
+}/*# sourceMappingURL=equipo.css.map */
