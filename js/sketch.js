@@ -77,10 +77,9 @@ function generateCircles() {
     circles.push(new Circle(605, 340, 'modal-2', iconImage1)); 
     circles.push(new Circle(380, 570, 'modal-3', iconImage2));
     circles.push(new Circle(980, 330, 'modal-4', iconImage2));
-    circles.push(new Circle(1470, 330, 'modal-1', iconImage1)); 
-    circles.push(new Circle(1980, 450,'modal-3', iconImage2));
-    circles.push(new Circle(2260, 550,'modal-2', iconImage1));
-    circles.push(new Circle(3440, 450,'modal-3', iconImage2));
+    circles.push(new Circle(2250, 200, 'modal-5', iconImage2)); 
+    circles.push(new Circle(2950, 380,'modal-6', iconImage2));
+    circles.push(new Circle(3450, 450,'modal-7', iconImage1));
     circles.push(new Circle(3700, 500,'modal-2', iconImage1));
     circles.push(new Circle(4650, 500,'modal-3', iconImage2));
     circles.push(new Circle(6550, 500,'modal-2', iconImage1));
