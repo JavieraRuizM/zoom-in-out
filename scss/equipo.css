@@ -1,5 +1,10 @@
+.equipo {
+  padding: 8rem 10rem;
+  padding-bottom: 1rem;
+}
+
 .creditos {
-  padding: 10rem;
+  padding: 2rem 10rem;
   padding-bottom: 5rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 1fr));

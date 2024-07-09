@@ -14,6 +14,11 @@ body{
     min-height: 100vh; 
     font-family: 'open sans', sans-serif;
 
+    &.secondary-page {
+        background-color: #d30909; /* Fondo específico para la página secundaria */
+        background-attachment: fixed;
+
+}
 }
 
 header{
