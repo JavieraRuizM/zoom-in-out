@@ -132,25 +132,6 @@ function closeModal(modalId) {
     }
 }
 
-function touchStarted() {
-    handleTouch(touches[0].x, touches[0].y);
-    return false; // Prevent default behavior
-}
-
-function handleTouch(x, y) {
-    let foundCircle = false;
-    circles.forEach(circle => {
-        let d = dist(x - offsetX, y, circle.x, circle.y);
-        if (d < diametro / 2) {
-            showModal(circle.modalId);
-            foundCircle = true;
-        }
-    });
-
-    if (!foundCircle) {
-        // Realizar otras operaciones si no se hizo clic en ningún círculo
-    }
-}
 
 
 // Constructor de objetos Circle
