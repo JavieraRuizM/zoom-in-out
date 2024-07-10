@@ -13,7 +13,7 @@ let canvas;
 let lastTouchX = null; // Para seguimiento de movimiento en móviles
 
 function preload() {
-    img = loadImage('wep.webp'); // Cargar la imagen
+    img = loadImage('base.png'); // Cargar la imagen
     iconImage1 = loadImage('icon1.svg'); // Cargar íconos
     iconImage2 = loadImage('icon2.svg');
 }
