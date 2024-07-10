@@ -1,1 +1,27 @@
-/*# sourceMappingURL=proyecto.css.map */
+.sobre {
+  padding: 10rem 6rem;
+  justify-content: center;
+  margin: 0 6rem;
+}
+.sobre h2 {
+  padding-bottom: 1rem;
+}
+.sobre p {
+  font-size: 1.2em;
+  line-height: 1.65em;
+}
+
+@media only screen and (max-width: 900px) {
+  .sobre {
+    padding: 8rem 3rem; /* Ajusta el padding horizontal para centrar */
+    margin: 0; /* Elimina el margen horizontal para centrar completamente */
+  }
+  .sobre h2 {
+    padding-bottom: 1.2rem;
+  }
+  .sobre p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    text-align: left;
+  }
+}/*# sourceMappingURL=proyecto.css.map */

@@ -1,0 +1,35 @@
+.sobre {
+    padding: 10rem 6rem;
+    justify-content: center;
+    margin: 0 6rem;
+
+    h2 {
+        padding-bottom: 1rem;
+    }
+    
+    p {
+        font-size: 1.2em;
+        line-height: 1.65em;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .sobre{
+        padding: 8rem 3rem; /* Ajusta el padding horizontal para centrar */
+        margin: 0; /* Elimina el margen horizontal para centrar completamente */
+
+        h2 {
+            padding-bottom: 1.2rem;
+        }
+
+        p{
+            font-size: 1.1em;
+            line-height: 1.5em;
+            text-align:left;
+        }
+
+    }
+
+}
