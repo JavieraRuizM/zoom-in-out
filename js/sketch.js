@@ -30,6 +30,7 @@ function setup() {
 
     window.addEventListener('wheel', handleWheel, { passive: false }); // Manejar scroll
     window.addEventListener('touchmove', handleTouchMove, { passive: false }); // Manejar touchmove
+    window.addEventListener('touchend', touchEnded, { passive: false }); // Manejar touchend
 }
 
 function windowResized() {
@@ -106,10 +107,14 @@ function handleTouchMove(event) {
         let touch = event.touches[0];
         if (lastTouchX !== null) {
             let deltaX = touch.clientX - lastTouchX;
-            offsetX -= deltaX; // Invertir el desplazamiento
-            offsetX = constrain(offsetX, -img.width + windowWidth, 0);
+            if (abs(deltaX) > 5) { // Solo actualizar si el desplazamiento es significativo
+                offsetX -= deltaX; // Invertir el desplazamiento
+                offsetX = constrain(offsetX, -img.width + windowWidth, 0);
+                lastTouchX = touch.clientX;
+            }
+        } else {
+            lastTouchX = touch.clientX;
         }
-        lastTouchX = touch.clientX;
         event.preventDefault();
     }
 }
@@ -163,6 +168,7 @@ function Circle(x, y, modalId, iconImage) {
     this.iconImage = iconImage;
     this.diametroActual = diametro; // Inicializar el diámetro actual del círculo
 }
+
 
 
 
