@@ -264,6 +264,10 @@ body.modal-open {
     grid-template-columns: 1fr; /* Single column layout */
     padding: 2rem; /* Adjust padding if needed */
     gap: 2rem; /* Adjust gap if needed */
+    padding-bottom: 5rem;
+  }
+  .modal .modal-content .text-content {
+    padding-bottom: 2rem;
   }
 }
 .equipo {
