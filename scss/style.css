@@ -132,7 +132,7 @@ header {
 }
 /* Secondary page header styles */
 .secondary-header {
-  background: rgb(245, 241, 241);
+  background: rgb(248, 244, 244);
 }
 .secondary-header .logo, .secondary-header .logo a {
   color: rgb(0, 0, 0);
@@ -153,7 +153,7 @@ header {
 }
 @media only screen and (max-width: 900px) {
   .secondary-header .nav-bar {
-    background: rgb(245, 241, 241);
+    background: rgb(248, 244, 244);
   }
   .secondary-header .nav-bar ul li a {
     color: rgb(62, 62, 62);
