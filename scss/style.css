@@ -98,7 +98,7 @@ header {
     left: 0;
     right: 0;
     width: 100vw;
-    background: rgb(241, 241, 241);
+    background: rgba(241, 241, 241, 0.422);
     transition: opacity 0.2s;
     opacity: 0;
     overflow: hidden;
