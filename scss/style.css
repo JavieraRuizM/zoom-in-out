@@ -10,12 +10,12 @@
 }
 
 body {
-  background-color: #f6eded;
+  background-color: #fbf9f9;
   min-height: 100vh;
   font-family: "open sans", sans-serif;
 }
 body.secondary-page {
-  background-color: #d30909; /* Fondo específico para la página secundaria */
+  background-color: #fbf9f9; /* Fondo específico para la página secundaria */
   background-attachment: fixed;
 }
 
@@ -126,6 +126,35 @@ header {
     display: block; /* Muestra la lista cuando está activo */
   }
 }
+/* Secondary page header styles */
+.secondary-header {
+  background: rgb(242, 238, 238);
+}
+.secondary-header .logo, .secondary-header .logo a {
+  color: rgb(0, 0, 0);
+}
+.secondary-header .nav-bar ul li a {
+  color: rgb(90, 90, 90);
+}
+.secondary-header .nav-bar ul li a:hover, .secondary-header .nav-bar ul li a.active {
+  color: rgb(0, 0, 0);
+  transform: scale(1.05);
+}
+.secondary-header .hamburger .line {
+  background: rgb(62, 62, 62);
+}
+@media only screen and (max-width: 900px) {
+  .secondary-header .nav-bar {
+    background: black;
+  }
+  .secondary-header .nav-bar ul li a {
+    color: rgb(62, 62, 62);
+  }
+  .secondary-header .nav-bar ul li a.active {
+    color: rgb(0, 0, 0);
+  }
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -328,4 +357,27 @@ body.modal-open {
 }
 .info-persona ul li {
   margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+  .equipo {
+    padding: 7rem 2rem;
+    padding-bottom: 1rem;
+  }
+  .equipo h1 {
+    font-size: 25px;
+  }
+  .creditos {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .persona {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
