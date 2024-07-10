@@ -168,10 +168,9 @@ body.modal-open {
 }
 
 .container {
-  /*padding-top: 5rem; Altura del encabezado */
   height: 100%;
-  width: 100vp; /* Ancho máximo igual al viewport */
-  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+  max-width: 100vw;
+  box-sizing: border-box;
   position: relative;
   z-index: -1;
 }
@@ -179,11 +178,7 @@ body.modal-open {
 #canvas-container {
   top: 0;
   left: 0;
-  /*width: 100%;*/
-  height: 100%;
-  width: 100vp; /* Ocupa toda la altura del viewport */
-  /*margin: 0 auto; /* Centra horizontalmente */
-  /*max-height: calc(100vh - 80px - 80px);*/
+  height: 100vh;
 }
 
 .modal {
@@ -198,7 +193,7 @@ body.modal-open {
   padding: 20px;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px); /* Aplica el efecto de desenfoque al fondo */
+          backdrop-filter: blur(8px);
 }
 .modal .modal-content {
   display: grid;
@@ -214,7 +209,39 @@ body.modal-open {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease-in-out; /* Añade una transición suave */
+  transition: transform 0.3s ease-in-out;
+}
+.modal .modal-content .text-content {
+  color: rgb(0, 0, 0);
+  overflow: auto;
+}
+.modal .modal-content .text-content h2 {
+  color: #000000;
+  margin-top: 0;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 0;
+  line-height: 1.3;
+  vertical-align: top;
+}
+.modal .modal-content .text-content h3 {
+  color: #000000;
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 10px;
+  padding: 0;
+  line-height: 1.8;
+  vertical-align: top;
+}
+.modal .modal-content .text-content p {
+  font-weight: 400;
+  color: #000000;
+  font-size: 1.1em;
+  line-height: 1.58;
+  margin-top: 15px;
 }
 .modal .close-button {
   position: absolute;
@@ -230,86 +257,13 @@ body.modal-open {
 .modal .close-button:hover {
   color: #787878;
 }
-.modal .text-content {
-  color: rgb(0, 0, 0);
-  overflow: auto;
-}
-.modal .text-content h2 {
-  color: #000000; /* Cambia el color del texto */
-  margin-top: 0;
-  font-size: 30px; /* Cambia el tamaño del texto */
-  font-weight: bold; /* Cambia el peso de la fuente */
-  margin-bottom: 5px; /* Agrega un margen inferior */
-  padding: 0;
-  line-height: 1.3; /* Ajusta la altura de línea para que sea más compacta */
-  vertical-align: top;
-}
-.modal .text-content h3 {
-  color: #000000; /* Cambia el color del texto */
-  margin-top: 0;
-  font-size: 20px; /* Cambia el tamaño del texto */
-  font-weight: 600; /* Cambia el peso de la fuente */
-  font-style: italic;
-  margin-bottom: 10px; /* Agrega un margen inferior */
-  padding: 0;
-  line-height: 1.8; /* Ajusta la altura de línea para que sea más compacta */
-  vertical-align: top;
-}
-.modal .text-content p {
-  font-weight: 400;
-  color: #000000;
-  font-size: 1.1em;
-  line-height: 1.58;
-  margin-top: 15px;
-}
-
-/* Carousel styles */
-.carousel {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-.carousel .carousel-item {
-  min-width: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-.carousel .carousel-indicators {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-.carousel .carousel-indicators .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.carousel .carousel-indicators .dot.active {
-  background-color: #717171;
-}
 
 /* Media Query para pantallas de ancho máximo 900px */
 @media (max-width: 900px) {
-  .modal-content {
-    margin-top: 70px;
-    grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem; /* Ajusta el gap si es necesario */
-  }
-  .modal-content img,
-  .modal-content video {
-    width: 100%;
-    height: auto;
-  }
-  .text-content h2 {
-    font-size: 1.5em; /* Ajusta el tamaño del texto si es necesario */
-  }
-  .text-content p {
-    font-size: 1em; /* Ajusta el tamaño del texto si es necesario */
+  .modal .modal-content {
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 2rem; /* Adjust padding if needed */
+    gap: 2rem; /* Adjust gap if needed */
   }
 }
 .equipo {

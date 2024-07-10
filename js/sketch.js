@@ -18,8 +18,8 @@ function preload() {
 }
 
 function setup() {
-    let canvasHeight = windowHeight;  // Ajusta la altura al tamaño del viewport
-    canvas = createCanvas(windowWidth, canvasHeight);
+    // Ajusta la altura al tamaño del viewport
+    canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-container');
     /*canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-container');
@@ -37,7 +37,7 @@ function setup() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    imgBuffer = createGraphics(img.width, windoHeight); // Crear buffer de imagen
+    imgBuffer = createGraphics(img.width, windowHeight); // Crear buffer de imagen
     imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer*/
  }
  
