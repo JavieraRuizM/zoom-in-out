@@ -10,7 +10,7 @@ let velocidadOpacidad = 0.03;
 let modalOpen = false;
 let iconImage1, iconImage2;
 let canvas;
-let lastMouseX = 0; // Para seguimiento de movimiento en móviles
+let lastTouchX = null; // Para seguimiento de movimiento en móviles
 
 function preload() {
     img = loadImage('wep.webp'); // Cargar la imagen
@@ -104,14 +104,18 @@ function handleWheel(event) {
 function handleTouchMove(event) {
     if (!modalOpen) {
         let touch = event.touches[0];
-        if (lastMouseX) {
-            let deltaX = touch.clientX - lastMouseX;
-            offsetX += deltaX;
+        if (lastTouchX !== null) {
+            let deltaX = touch.clientX - lastTouchX;
+            offsetX -= deltaX; // Invertir el desplazamiento
             offsetX = constrain(offsetX, -img.width + windowWidth, 0);
         }
-        lastMouseX = touch.clientX;
+        lastTouchX = touch.clientX;
         event.preventDefault();
     }
+}
+
+function touchEnded(event) {
+    lastTouchX = null; // Reiniciar el seguimiento de la posición del toque
 }
 
 function mousePressed() {
