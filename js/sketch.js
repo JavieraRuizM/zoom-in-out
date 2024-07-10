@@ -32,20 +32,9 @@ function setup() {
     generateCircles(); // Generar círculos
     noStroke(); // Sin contorno para los círculos
 
-    /*para celular y pc*/
-    // Manejar el scroll en dispositivos de escritorio y móviles
-    if ('ontouchstart' in window) {
-        // Dispositivo táctil (móvil)
-        canvas.touchMoved(handleTouchMove);
-    } else {
-        // Dispositivo de escritorio
-        window.addEventListener('wheel', handleWheel, { passive: false });
-        /*fin*/
-
-
-    //window.addEventListener('wheel', handleWheel, { passive: false }); // Manejar scroll
+    window.addEventListener('wheel', handleWheel, { passive: false }); // Manejar scroll
 }
-}
+
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -108,22 +97,14 @@ function generateCircles() {
     // Agregar más círculos si es necesario
 }
 
-/*para celular*/
-function handleTouchMove() {
-    let delta = touches[0].deltaX;
-    if (!modalOpen && delta !== 0) {
-        offsetX -= delta;
-        offsetX = constrain(offsetX, -img.width + windowWidth, 0);
-    }
-}
-/*fin*/
+
 
 function handleWheel(event) {
-    if (!modalOpen && event.deltaY !== 0) {
-        offsetX -= event.deltaY;
-        offsetX = constrain(offsetX, -img.width + windowWidth, 0);
+   if (!modalOpen && event.deltaY !== 0) {
+       offsetX -= event.deltaY;
+       offsetX = constrain(offsetX, -img.width + windowWidth, 0);
         event.preventDefault();
-    }
+   }
 }
 
 function mousePressed() {
