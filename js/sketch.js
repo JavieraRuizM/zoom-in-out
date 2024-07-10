@@ -108,7 +108,7 @@ function handleTouchMove(event) {
         if (lastTouchX !== null) {
             let deltaX = touch.clientX - lastTouchX;
             if (abs(deltaX) > 5) { // Solo actualizar si el desplazamiento es significativo
-                offsetX -= deltaX; // Invertir el desplazamiento
+                offsetX += deltaX; // Invertir el desplazamiento
                 offsetX = constrain(offsetX, -img.width + windowWidth, 0);
                 lastTouchX = touch.clientX;
             }
@@ -168,6 +168,7 @@ function Circle(x, y, modalId, iconImage) {
     this.iconImage = iconImage;
     this.diametroActual = diametro; // Inicializar el diámetro actual del círculo
 }
+
 
 
 
