@@ -10,7 +10,6 @@ let velocidadOpacidad = 0.03;
 let modalOpen = false;
 let iconImage1, iconImage2;
 let canvas;
-let lastMouseX = 0; // Para seguimiento de movimiento en móviles
 
 function preload() {
     img = loadImage('wep.webp'); // Cargar la imagen
@@ -22,22 +21,27 @@ function setup() {
     // Ajusta la altura al tamaño del viewport
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('canvas-container');
+    /*canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('canvas-container');
+    imgBuffer = createGraphics(img.width, img.height); // Crear buffer de imagen
+    imgBuffer.image(img, 0, 0, img.width, img.height); // Dibujar imagen en buffer*/
     imgBuffer = createGraphics(img.width, windowHeight); // Crear buffer de imagen
-    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer
+    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer*/
+
 
     generateCircles(); // Generar círculos
     noStroke(); // Sin contorno para los círculos
 
     window.addEventListener('wheel', handleWheel, { passive: false }); // Manejar scroll
-    window.addEventListener('touchmove', handleTouchMove, { passive: false }); // Manejar touchmove
 }
+
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     imgBuffer = createGraphics(img.width, windowHeight); // Crear buffer de imagen
-    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer
-}
-
+    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer*/
+ }
+ 
 function draw() {
     background(255); // Fondo blanco
     translate(offsetX, 0); // Desplazamiento horizontal
@@ -93,25 +97,14 @@ function generateCircles() {
     // Agregar más círculos si es necesario
 }
 
-function handleWheel(event) {
-    if (!modalOpen && event.deltaY !== 0) {
-        offsetX -= event.deltaY;
-        offsetX = constrain(offsetX, -img.width + windowWidth, 0);
-        event.preventDefault();
-    }
-}
 
-function handleTouchMove(event) {
-    if (!modalOpen) {
-        let touch = event.touches[0];
-        if (lastMouseX) {
-            let deltaX = touch.clientX - lastMouseX;
-            offsetX += deltaX;
-            offsetX = constrain(offsetX, -img.width + windowWidth, 0);
-        }
-        lastMouseX = touch.clientX;
+
+function handleWheel(event) {
+   if (!modalOpen && event.deltaY !== 0) {
+       offsetX -= event.deltaY;
+       offsetX = constrain(offsetX, -img.width + windowWidth, 0);
         event.preventDefault();
-    }
+   }
 }
 
 function mousePressed() {
@@ -151,6 +144,8 @@ function closeModal(modalId) {
     }
 }
 
+
+
 // Constructor de objetos Circle
 function Circle(x, y, modalId, iconImage) {
     this.x = x;
@@ -159,6 +154,3 @@ function Circle(x, y, modalId, iconImage) {
     this.iconImage = iconImage;
     this.diametroActual = diametro; // Inicializar el diámetro actual del círculo
 }
-
-
-
