@@ -9,6 +9,7 @@ let oscilacionOpacidad = 50;
 let velocidadOpacidad = 0.03;
 let modalOpen = false;
 let iconImage1, iconImage2;
+let canvas;
 
 function preload() {
     img = loadImage('wep.webp'); // Cargar la imagen
@@ -17,10 +18,16 @@ function preload() {
 }
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight); 
-    canvas.parent('canvas-container'); 
+    let canvasHeight = windowHeight;  // Ajusta la altura al tamaño del viewport
+    canvas = createCanvas(windowWidth, canvasHeight);
+    canvas.parent('canvas-container');
+    /*canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('canvas-container');
     imgBuffer = createGraphics(img.width, img.height); // Crear buffer de imagen
-    imgBuffer.image(img, 0, 0, img.width, img.height); // Dibujar imagen en buffer
+    imgBuffer.image(img, 0, 0, img.width, img.height); // Dibujar imagen en buffer*/
+    imgBuffer = createGraphics(img.width, windowHeight); // Crear buffer de imagen
+    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer*/
+
 
     generateCircles(); // Generar círculos
     noStroke(); // Sin contorno para los círculos
@@ -30,6 +37,8 @@ function setup() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+    imgBuffer = createGraphics(img.width, windoHeight); // Crear buffer de imagen
+    imgBuffer.image(img, 0, 0, img.width, windowHeight); // Dibujar imagen en buffer*/
  }
  
 function draw() {
